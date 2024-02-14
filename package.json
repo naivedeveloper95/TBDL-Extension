@@ -9,9 +9,34 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:tbdl.helloWorld",
+    "onCommand:tbdl.askQuestion",
+    "onCommand:tbdl.refresh",
+    "onView:tbdl-sidebar-view:tbdl-sidebar"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "tbdl-sidebar-view",
+          "title": "TBDL",
+          "icon": "media/todo.svg"
+        }
+      ]
+    },
+    "views": {
+      "tbdl-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "tbdl-sidebar",
+          "name": "TBDL",
+          "icon": "media/todo.svg",
+          "contextualTitle": "TBDL"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "tbdl.helloWorld",
@@ -21,6 +46,11 @@
         "command": "tbdl.askQuestion",
         "category": "TBDL",
         "title": "Ask Question"
+      },
+      {
+        "command": "tbdl.refresh",
+        "category": "TBDL",
+        "title": "Refresh"
       }
     ]
   },

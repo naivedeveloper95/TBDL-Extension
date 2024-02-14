@@ -30,15 +30,17 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("tbdl.refresh", () => {
+    vscode.commands.registerCommand("tbdl.refresh", async () => {
       // The code you place here will be executed every time your command is executed
-      HelloWorldPanel.kill();
-      HelloWorldPanel.createOrShow(context.extensionUri);
-      setTimeout(() => {
-        vscode.commands.executeCommand(
-          "workbench.action.webview.openDeveloperTools"
-        );
-      }, 500);
+      // HelloWorldPanel.kill();
+      // HelloWorldPanel.createOrShow(context.extensionUri);
+      await vscode.commands.executeCommand("workbench.action.closeSidebar");
+      await vscode.commands.executeCommand("tbdl-sidebar.focus");
+      // setTimeout(() => {
+      //   vscode.commands.executeCommand(
+      //     "workbench.action.webview.openDeveloperTools"
+      //   );
+      // }, 500);
     })
   );
 

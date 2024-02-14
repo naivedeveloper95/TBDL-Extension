@@ -6,6 +6,7 @@ import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
 import path from "path";
 import fs from "fs";
+import css from "rollup-plugin-import-css";
 
 const production = !process.env.ROLLUP_WATCH;
 const dirName = import.meta.dirname;
@@ -61,6 +62,7 @@ export default fs
         // If we're building for production (npm run build
         // instead of npm run dev), minify
         production && terser(),
+        css()
       ],
       watch: {
         clearScreen: false,

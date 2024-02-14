@@ -2,7 +2,7 @@
 // It cannot access the main VS Code APIs directly.
 
 (function () {
-    const vscode = acquireVsCodeApi();
-    const button = document.getElementById('button');
-    button.innerText = "Hello from javascript!";
-}());
+  const vscode = acquireVsCodeApi();
+  const button = document.getElementById("button");
+  button.innerText = "Hello from javascript!";
+})();

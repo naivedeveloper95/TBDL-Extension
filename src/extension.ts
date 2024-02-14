@@ -17,8 +17,8 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("tbdl.helloWorld", () => {
       // The code you place here will be executed every time your command is executed
       // Display a message box to the user
-    //   vscode.window.showInformationMessage("Hello from TBDL!");
-		HelloWorldPanel.createOrShow(context.extensionUri);
+      //   vscode.window.showInformationMessage("Hello from TBDL!");
+      HelloWorldPanel.createOrShow(context.extensionUri);
     })
   );
 
@@ -31,15 +31,15 @@ export function activate(context: vscode.ExtensionContext) {
         "fine"
       );
 
-	  if (answer) {
-		if (answer === "good") {
-			vscode.window.showInformationMessage("Glad to hear that!");
-		} else if (answer === "bad") {
-			vscode.window.showInformationMessage("Sorry to hear that!");
-		} else if (answer === "fine") {
-			vscode.window.showInformationMessage("Hope it gets better!");
-		}
-	  }
+      if (answer) {
+        if (answer === "good") {
+          vscode.window.showInformationMessage("Glad to hear that!");
+        } else if (answer === "bad") {
+          vscode.window.showInformationMessage("Sorry to hear that!");
+        } else if (answer === "fine") {
+          vscode.window.showInformationMessage("Hope it gets better!");
+        }
+      }
     })
   );
 }

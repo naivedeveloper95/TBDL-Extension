@@ -8,9 +8,10 @@ import path from "path";
 import fs from "fs";
 
 const production = !process.env.ROLLUP_WATCH;
+const dirName = import.meta.dirname;
 
 export default fs
-  .readdirSync(path.join(__dirname, "webviews", "pages"))
+  .readdirSync(path.join(dirName, "webviews", "pages"))
   .map((input) => {
     const name = input.split(".")[0];
     return {

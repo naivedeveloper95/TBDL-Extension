@@ -10,9 +10,6 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:tbdl.helloWorld",
-    "onCommand:tbdl.askQuestion",
-    "onCommand:tbdl.refresh",
     "onView:tbdl-sidebar-view:tbdl-sidebar"
   ],
   "main": "./dist/extension.js",

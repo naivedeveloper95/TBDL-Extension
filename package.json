@@ -48,6 +48,11 @@
         "command": "tbdl.refresh",
         "category": "TBDL",
         "title": "Refresh"
+      },
+      {
+        "command": "tbdl.addTasks",
+        "category": "TBDL",
+        "title": "Add Tasks From Selection"
       }
     ]
   },
@@ -93,5 +98,8 @@
     "vscode-test": "^1.4.0",
     "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@vscode/codicons": "^0.0.35"
   }
 }

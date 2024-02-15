@@ -1,6 +1,20 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+
   let todos: Array<{ text: string; completed: boolean }> = [];
   let text = "";
+
+  onMount(() => {
+    window.addEventListener("message", (event) => {
+      const message = event.data; // The json data that the extension sent
+      console.log({ message });
+      switch (message.type) {
+        case "add-task":
+          todos = [{ text: message.value, completed: false }, ...todos];
+          break;
+      }
+    });
+  });
 </script>
 
 <!-- <div>Hello</div> -->
@@ -38,6 +52,24 @@
     {/if}
   {/each}
 </ul>
+
+<button
+  on:click={() => {
+    tsvscode.postMessage({
+      type: "onInfo",
+      value: "info message",
+    });
+  }}>click me for Info</button
+>
+
+<button
+  on:click={() => {
+    tsvscode.postMessage({
+      type: "onError",
+      value: "error message",
+    });
+  }}>click me for Error</button
+>
 
 <!-- {#if todos.length > 0}
   <pre>

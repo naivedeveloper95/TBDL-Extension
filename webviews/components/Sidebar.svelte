@@ -18,15 +18,24 @@
   {#each todos as todo (todo.text)}
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <li
-      class={todo.completed ? "complete" : ""}
-      on:click={() => {
-        todo.completed = !todo.completed;
-        console.log(todo.completed);
-      }}
-    >
-      {todo.text}
-    </li>
+    {#if todo.completed}
+      <li
+        style="text-decoration: line-through;"
+        on:click={() => {
+          todo.completed = !todo.completed;
+        }}
+      >
+        {todo.text}
+      </li>
+    {:else}
+      <li
+        on:click={() => {
+          todo.completed = !todo.completed;
+        }}
+      >
+        {todo.text}
+      </li>
+    {/if}
   {/each}
 </ul>
 
@@ -36,8 +45,8 @@
   </pre>
 {/if} -->
 
-<style>
+<!-- <style>
   .complete {
     text-decoration: line-through;
   }
-</style>
+</style> -->
